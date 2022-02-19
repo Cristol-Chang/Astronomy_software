@@ -1,0 +1,111 @@
+生成txt:
+文本编辑
+Shift+command+T
+保存 command + s
+
+Mac 安装软件：
+1.brew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+Brew 查找 brew search name
+列出已经安装的软件包：brew list
+
+
+2.sextractor
+Download version 2.5 from here
+./configure
+make
+sudo make install
+
+3.macport
+官网下载对应版本
+使用：
+查看是否安装 port
+查找软件 port search name
+使用port安装 sudo port install name,分别安装psfex, swarp
+查看已安装的软件： port installed
+
+设置环境变量
+vim .bash_profile
+PATH路径下
+/usr/local/Cellar/gcc/8.2.0/bin:/usr/local/Cellar/gcc/8.2.0/lib
+原路径：/anaconda3/bin:$PATH"
+alias gcc='gcc-8'
+alias g++='g++-8'
+alias c++='c++-8'
+Gcc -v 查看
+
+服务器上安装anaconda3
+1.官网上下载linux版本
+2.上传至服务器，
+3.bash AnacondaXXXXXX(之后全部yes
+4.source ~/.bashrc
+5.查看是否安装 conda --version
+6.查看python环境
+
+安装Jupiter notebook
+1.jupyter notebook --generate-config（配置文件)
+2.生成密码
+$ipython
+In [1]: from notebook.auth import passwd
+
+In [2]: passwd()
+Enter password:
+Verify password:
+Out[2]: 'sha1:cd723d3e4b0a:e5ca450bbedb63511c78989ea16b8d26941227fb'
+3.修改配置文件
+vim ~/.jupyter/jupyter_notebook_config.py 
+4.添加/修改如下字段
+c.NotebookApp.ip='*' #意思是任意IP都可以访问
+c.NotebookApp.password = u'sha1:cd723d3e4b0a:e5ca450bbedb63511c78989ea16b8d26941227fb' #刚才那个生成的密文
+c.NotebookApp.open_browser = False  #意思是默认不打开浏览器
+c.NotebookApp.port =8888 #随便指定一个你想要的端口,后面可以从这个端口使用
+5.启动Jupiter
+Jupiter notebook --no-browser --port=10000
+后台脚本修改
+
+
+安装 iraf
+参见http://research.iac.es/sieinvens/siepedia/pmwiki.php?n=HOWTOs.IrafMacOSX#IRAFsetup
+快速安装iraf 大法，Quick and easy IRAF installation procedure for macOS (之前我一定是傻了才没有看到这个方法)
+具体如下：
+1.安装
+cd ~/Downloads/ 
+wget ftp://iraf.noao.edu/iraf/v216/PCIX/iraf.macx.x86_64.tar.gz
+2.设置参数
+First set up the IRAF home directory and run mkiraf. 
+cd ~/ 
+mkdir iraf ; cd iraf 
+mkiraf (select xgterm as terminal type) 
+
+
+xgterm & or 
+xgterm -ls & 
+(the latter will launch xgterm as a login shell, use it if you miss the settings or aliases defined in .bash_profile)
+Check the login.cl file just created. If the cache variable is set to "/tmp" or "/tmp//", change it to something like "/tmp/cache/" or "/iraf/cache/".
+3.运行
+xgterm
+cd ~/iraf/ 
+ecl or c
+
+
+安装ps2eps ----将pdf转化为eps
+brew install ps2eps
+
+添加命令到路径
+运行
+Echo $PATH
+出现
+/opt/local/bin:/opt/local/sbin:/usr/local/Cellar/gcc/8.2.0/bin:/anaconda3/bin:/anaconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin
+用:分割可以添加的路径
+e.g.
+mv xx /usr/local/bin
+
+安装 idl
+Guide website
+https://idlastro.gsfc.nasa.gov/
+https://astrobetter.com/wiki/idl
+
+Download through
+https://github.com/wlandsman/IDLAstro
+
+
