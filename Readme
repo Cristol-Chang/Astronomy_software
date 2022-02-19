@@ -1,13 +1,11 @@
-生成txt:
-文本编辑
-Shift+command+T
-保存 command + s
+Install Astronomy software on MAC
 
-Mac 安装软件：
+
 1.brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-Brew 查找 brew search name
-列出已经安装的软件包：brew list
+general command
+  brew search name # search package
+  brew list # list the package that has been installed
 
 
 2.sextractor
@@ -17,22 +15,22 @@ make
 sudo make install
 
 3.macport
-官网下载对应版本
-使用：
-查看是否安装 port
-查找软件 port search name
-使用port安装 sudo port install name,分别安装psfex, swarp
-查看已安装的软件： port installed
+Could be download on the website
+How to use
+  check whether install or not: port
+  search software name: port search name
+  use port to install software:sudo port install name
+   list the package that has been installed: port installed
 
-设置环境变量
+4.How to set the environment
 vim .bash_profile
-PATH路径下
+path
 /usr/local/Cellar/gcc/8.2.0/bin:/usr/local/Cellar/gcc/8.2.0/lib
-原路径：/anaconda3/bin:$PATH"
+origin：/anaconda3/bin:$PATH"
 alias gcc='gcc-8'
 alias g++='g++-8'
 alias c++='c++-8'
-Gcc -v 查看
+Gcc -v check
 
 服务器上安装anaconda3
 1.官网上下载linux版本
